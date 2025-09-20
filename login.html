@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        fieldset
+        {
+       
+            box-shadow: 0px 0px 15px greenyellow;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        input[type=text],input[type="password"]
+        {
+            border-radius: 10px;
+            height: 20px;
+            width: auto;
+            margin-top: 5px;
+            border: 1px solid grey;
+            padding: 5px;
+        }
+        #btn1
+        {
+            background-color: blue;
+            color: white;
+            border-radius: 30px;
+            height: 30px;
+            width: 100%;
+            border: none;
+            margin-top: 10px;
+        }
+        #btn2
+        {
+            background: color white;;
+            color:black;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: none;
+             height: 30px;
+            width: 100%;
+        }
+
+        #container
+        {
+           margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div id="container">
+
+        <fieldset><legend>Login</legend>
+        <form action="" onsubmit="fun(event)">
+         <label for="">UserName</label><br>
+        <input type="text" name="name" placeholder="Enter your Name" id="one"><br><br>
+        <label for="">Password</label><br>
+        <input type="password" name="psw" placeholder="Enter your password" id="two"><br><br>
+        <input type="submit" name="" id="btn1">
+        <input type="button" name="" id="btn2" value="Forgot Password??">
+        </form>
+       </fieldset>
+
+    </div>
+    <script>
+        function fun(event)
+        {
+            event.preventDefault()
+            let input1ref=document.getElementById("one")
+            let username=input1ref.value
+            let input2ref=document.getElementById("two")
+            let psw=input2ref.value
+            if(username==="bhanu" && psw==="1234")
+            {
+            localStorage.setItem("uname",username)
+            window.location.href="welcome.html"
+            }
+            else{
+            alert("invalid Credentials")
+            }
+
+        }
+
+    </script>
+</body>
+</html>

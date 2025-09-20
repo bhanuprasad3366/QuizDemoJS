@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+          visibility: hidden;
+          background-color: greenyellow;
+          padding: 20px;
+          text-align: center;
+        }
+        a{
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid black;
+            padding: 20px;
+            margin-left:350px;
+            border-radius: 20px;
+        }
+        a:hover
+        {
+            background-color: coral;
+            
+        }
+    </style> 
+</head>
+<body>
+    <h1 id="one">Welcome Dear </h1>
+    <a href="quiz.html">Take Quiz</a>
+
+    <script>
+    let ref=localStorage.getItem("uname")
+    if(ref)
+    {
+    let href=document.getElementById("one")
+    href.innerText=`A big welcome to you ${ref}`
+    href.style.visibility="visible"
+    }
+    </script>
+</body>
+</html>

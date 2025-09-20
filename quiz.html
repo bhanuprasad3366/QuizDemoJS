@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body
+    {
+      height: 100vh;
+      width: 100%;
+    }
+    #container
+    {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black;
+      
+    }
+    #btn1
+    {
+      height: 30px;
+      margin-top: 20px;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      width: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+  
+  <div id="container">
+
+    <form action="">
+   
+       <div class="question">
+        <p>1. What does “Loquacious” mean?</p>
+        <input type="radio" name="q1" value="A">Shy<br>
+        <input type="radio" name="q1" value="B">Talkative<br>
+        <input type="radio" name="q1" value="C">Angry<br>
+        <input type="radio" name="q1" value="D">Quiet<br>
+    </div>
+
+    <div class="question">
+        <p>2. What does “Ephemeral” mean?</p>
+        <input type="radio" name="q2" value="A">Lasting a short time<br>
+        <input type="radio" name="q2" value="B">Very large<br>
+        <input type="radio" name="q2" value="C">Difficult<br>
+        <input type="radio" name="q2" value="D">Permanent<br>
+    </div>
+
+    <div class="question">
+        <p>3. What does “Altruistic” mean?</p>
+        <input type="radio" name="q3" value="A">Selfless<br>
+        <input type="radio" name="q3" value="B">Greedy<br>
+        <input type="radio" name="q3" value="C">Lazy<br>
+        <input type="radio" name="q3" value="D">Rude<br>
+    </div>
+
+    <div class="question">
+        <p>4. What does “Obfuscate” mean?</p>
+        <input type="radio" name="q4" value="A">Clarify<br>
+        <input type="radio" name="q4" value="B">Confuse<br>
+        <input type="radio" name="q4" value="C">Support<br>
+        <input type="radio" name="q4" value="D">Explain<br>
+    </div>
+
+    <div class="question">
+        <p>5. What does “Cacophony” mean?</p>
+        <input type="radio" name="q5" value="A">Harsh noise<br>
+        <input type="radio" name="q5" value="B">Beautiful melody<br>
+        <input type="radio" name="q5" value="C">Silence<br>
+        <input type="radio" name="q5" value="D">Harmony<br>
+    </div>
+
+    <button id="btn1" type="submit" onclick="fun(event)">Submit</button>
+     
+</form>
+
+<h1 id="ans"></h1>
+
+  </div>
+  <script>
+    const ans={
+      q1:"B",
+      q2:"A",
+      q3:"A",
+      q4:"B",
+      q5:"A"
+    }
+
+    function fun(event)
+    {
+    event.preventDefault();
+    
+    let score=0
+    for(let i=1;i<=5;i++)
+    {
+      let qref=document.getElementsByName('q'+i)
+      for(let j=0;j<qref.length;j++)
+      {
+          if(qref[j].checked && qref[j].value===ans['q'+i])
+          {
+            score++
+          }
+      }
+
+    }
+    let href=document.getElementById("ans")
+    href.innerText=`you have scored ${score}/5`
+
+    }
+  </script>
+</body>
+</html>
